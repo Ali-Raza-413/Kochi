@@ -8,10 +8,14 @@
 */
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import LoginModal from "./Modals/LoginModal";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const navigate  = useNavigate();
 
   const paths = {
     "/findacoach": "Find a Coach",
@@ -75,14 +79,20 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 md:justify-center md:mt-4 lg:justify-end lg:mt-0">
-            <button className="text-[#66b932] px-10 py-2 border border-black md:px-4 md:py-2 rounded hover:bg-white hover:text-gray-800">
+            <button   
+            className="text-[#66b932] px-10 py-2 border border-black md:px-4 md:py-2 rounded hover:bg-white hover:text-gray-800"
+            onClick={() => setModalOpen(true)}
+            >
               Log In
             </button>
-            <button className="text-white bg-[#66b932] px-10 py-3 md:px-4 md:py-2 rounded">
+            <button className="text-white bg-[#66b932] px-10 py-3 md:px-4 md:py-2 rounded"
+                     onClick={( )=> navigate("/join") }
+             >
               Sign Up
             </button>
           </div>
         </div>
+        <LoginModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </div>
     </nav>
   );
