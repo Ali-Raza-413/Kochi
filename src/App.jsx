@@ -6,8 +6,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Layout from "./components/Layout";
-import FindaCoach from "./pages/findacoach/FIndaCoach";
 import ApplyToCoach from "./pages/applytocoach/ApplyToCoach";
+import FindaCoach from "./pages/findacoach/FindaCoach";
 
 const App = () => {
   return (
