@@ -40,9 +40,12 @@ const FindaCoach = () => {
           Text="Find trusted, local coaches and take your game to the next level"
           InputText="Enter City or Zip"
           BtText="FIND COACHES"
+          pathname="/coaches"
         />
       </div>
-      <h1 className="text-3xl text-black text-center font-bold mt-10">Why Choose an Kochi Coach?</h1>
+      <h1 className="text-3xl text-black text-center font-bold mt-10">
+        Why Choose an Kochi Coach?
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
         {cardsData.map((card, index) => (
           <GenericCard

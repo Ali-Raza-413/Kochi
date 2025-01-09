@@ -8,10 +8,12 @@
 */
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"; // Importing React Icons
+import { useNavigate } from "react-router-dom";
 
-const Background = ({ Text, InputText, BtText, ImagePath }) => {
+const Background = ({ Text, InputText, BtText, ImagePath, pathname }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedSport, setSelectedSport] = useState("");
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -73,7 +75,10 @@ const Background = ({ Text, InputText, BtText, ImagePath }) => {
             </div>
           </div>
           <div className="w-full">
-            <button className="bg-[#66b932] text-white text-xl md:text-2xl px-6 py-2 rounded-full w-full hover:bg-green-600">
+            <button
+              className="bg-[#66b932] text-white text-xl md:text-2xl px-6 py-2 rounded-full w-full hover:bg-green-600"
+              onClick={() => navigate({ pathname })}
+            >
               {BtText}
             </button>
           </div>

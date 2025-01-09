@@ -10,6 +10,8 @@ import ApplyToCoach from "./pages/applytocoach/ApplyToCoach";
 import FindaCoach from "./pages/findacoach/FindaCoach";
 import TopCoaches from "./pages/ourdifferences/TopCoaches";
 import SignUp from "./pages/join/SignUp";
+import Coaches from "./pages/coaches/Coaches";
+import Profile from "./pages/coachprofile/Profile";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/applytocoach" element={<ApplyToCoach />} />
           <Route path="/ourdifferences" element={<TopCoaches />} />
           <Route path="/join" element={<SignUp />} />
+          <Route path="/coaches" element={<Coaches />} />
+          <Route path="/coachprofile" element={<Profile />} />
         </Routes>
       </Layout>
     </Router>
